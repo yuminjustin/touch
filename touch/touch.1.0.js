@@ -42,7 +42,6 @@
         self.target.on("touchmove", function (event) {
             event.preventDefault();
             var temp = self.framework(event);
-            var d = new Date();
             self.tm = {
                 x: temp.pageX,
                 y: temp.pageY
