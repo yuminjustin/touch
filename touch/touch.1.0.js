@@ -4,7 +4,7 @@
         x: 100,
         y: 100
     };
-    Events = ['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown','tap', 'longTap', 'drag'];
+    Events = ['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown', 'tap', 'longTap', 'drag'];
     Events.forEach(function (eventName) {
         $.fn[eventName] = function () {
             var touch = new Touch($(this), eventName);
@@ -104,4 +104,4 @@
             return
         }
     }
-})(Zepto);
+})(window.jQuery || window.Zepto);
