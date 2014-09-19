@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <title>touch</title>
+    <!--<script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>-->
+    <script src="http://cdn.staticfile.org/zepto/1.0rc1/zepto.min.js"></script>
+    <script src="touch.1.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(this).tap(function (event) {
+                $("#xx").text("tap");
+            });
+            $(this).longTap(function (event) {
+                $("#xx").text("longtap");
+            });
+            $(this).swipeUp(function (event) {
+                $("#xx").text("swipeUp");
+            });
+            $(this).swipe(function (event) {
+                $("#xx").text("swipe");
+            });
+            $(this).swipeDown(function (event) {
+                $("#xx").text("swipeDown");
+            });
+            $(this).swipeLeft(function (event) {
+                $("#xx").text("swipeLeft");
+            });
+            $(this).swipeRight(function (event) {
+                $("#xx").text("swipeRight");
+            });
+        });
+    </script>
+</head>
+
+<body style="background:#CCC">
+    <div id="xx" style="color: #FFF;
+font-size: 32px;
+width: 100%;
+overflow: hidden;">
+    </div>
+</body>
+
+</html>
