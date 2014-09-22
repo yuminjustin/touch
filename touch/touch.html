@@ -7,9 +7,9 @@
     <title>touch</title>
     <script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
     <!--<script src="http://cdn.staticfile.org/zepto/1.0rc1/zepto.min.js"></script>-->
-    <script src='touch.1.0.min.js'></script>
+    <script src='touch.1.1.min.js'></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function () { /*must*/
             $(this).tap(function (event) {
                 $("#xx").text("tap");
             });
@@ -19,7 +19,7 @@
             $(this).swipeUp(function (event) {
                 $("#xx").text("swipeUp");
             }, {
-                x: 50,
+                x: 50,/*update the minimum swiping distance*/ 
                 y: 50
             });
             $(this).swipe(function (event) {
