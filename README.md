@@ -15,6 +15,7 @@ It offer generality touch events: tap,longTap, swipeUp,swipeDown,swipeLeft,swipe
 
 You can use it like these:
 
+
  $(document).ready(function () { /*must*/
             $(this).tap(function (event) {
                 $("#xx").text("tap");
@@ -51,6 +52,7 @@ $(".slider").drag(function (event, p) {
                   p.xs,p.ys: touch position when you start to touch
                 */
      });
+     
 版本：1.1
 修复拖拽事件
 此插件支持 JQuery或者Zepto
