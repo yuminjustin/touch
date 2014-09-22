@@ -15,35 +15,21 @@ It offer generality touch events: tap,longTap, swipeUp,swipeDown,swipeLeft,swipe
 
 You can use it like these:
 
-$(document).ready(function () { /*must*/
-
+      $(document).ready(function () { /*must*/
             $(this).tap(function (event) {
-            
                 $("#xx").text("tap");
-                
             });
             $(this).longTap(function (event) {
-            
                 $("#xx").text("longtap");
-                
             });
             $(this).swipeUp(function (event) {
-            
                 $("#xx").text("swipeUp");
-                
             }, {
-            
-                x: 50,
-                
-                /*update the minimum swiping distance*/
-                
+                x: 50,/*update the minimum swiping distance*/
                 y: 50
             });
-            
             $(this).swipe(function (event) {
-            
                 $("#xx").text("swipe");
-                
             });
             $(this).swipeDown(function (event) {
                 $("#xx").text("swipeDown");
@@ -58,13 +44,14 @@ $(document).ready(function () { /*must*/
 
 Drag events:
 
-$(".slider").drag(function (event, p) {
+       $(".slider").drag(function (event, p) {
                 console.log(p.x,p.y,p.xs,p.ys);
                 /*
                   p.x,p.y: touch position now
                   p.xs,p.ys: touch position when you start to touch
                 */
-     });
+      });
+      
      
 版本：1.1
 修复拖拽事件
