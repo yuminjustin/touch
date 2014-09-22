@@ -15,8 +15,7 @@ It offer generality touch events: tap,longTap, swipeUp,swipeDown,swipeLeft,swipe
 
 You can use it like these:
 
-
- $(document).ready(function () { /*must*/
+$(document).ready(function () { /*must*/
             $(this).tap(function (event) {
                 $("#xx").text("tap");
             });
@@ -26,8 +25,8 @@ You can use it like these:
             $(this).swipeUp(function (event) {
                 $("#xx").text("swipeUp");
             }, {
-                x: 50, /*update the minimum swiping distance*/
-                y: 50
+                x: 50,
+                /*update the minimum swiping distance*/ y: 50
             });
             $(this).swipe(function (event) {
                 $("#xx").text("swipe");
