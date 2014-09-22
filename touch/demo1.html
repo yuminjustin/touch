@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <title>touch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #000
+        }
+        body,
+        html,
+        #slider {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        #slider ul {
+            width: 400%;
+            height: 100%;
+            list-style: none;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        #slider ul li {
+            float: left;
+            width: 25%;
+            height: 100%;
+            list-style: none;
+        }
+        #slider ul li img {
+            width: 100%;
+        }
+    </style>
+    <script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+    <script src="touch.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var w = $(window).width();
+            var n = 0;
+            var l = $("#slider li").length;
+            $("#slider").swipeLeft(function () {
+                if (n < (l - 1)) {
+                    $("ul", this).animate({
+                        "left": "-=" + w
+                    });
+                    n++;
+                }
+            });
+            $("#slider").swipeRight(function () {
+                if (n > 0) {
+                    $("ul", this).animate({
+                        "left": "+=" + w
+                    });
+                    n--;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="slider">
+        <ul>
+            <li>
+                <img src="http://img5.duitang.com/uploads/item/201112/19/20111219083341_2P55n.thumb.600_0.jpg" />
+            </li>
+            <li>
+                <img src="http://img4.duitang.com/uploads/item/201112/19/20111219082225_cdBw8.jpg" />
+            </li>
+            <li>
+                <img src="http://img5.duitang.com/uploads/item/201112/19/20111219083010_E8PGE.thumb.700_0.jpg" />
+            </li>
+            <li>
+                <img src="http://www.yxbns.com/bizhi/image/20121474.jpg" />
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

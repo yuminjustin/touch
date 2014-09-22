@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <title>touch</title>
+    <script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+    <script src="touch.1.1.min.js"></script>
+    <script>
+        /****************************/
+        $(document).ready(function () {
+            $(".div1").drag(function (event, p) {
+                var dropObj = $(".div2");
+                $(this).css({
+                    "top": p.y - $(this).height() * 0.5,
+                    "left": p.x - $(this).width() * 0.5
+                });
+                if ($(this).offset().left > dropObj.offset().left && $(this).offset().left < dropObj.offset().left + dropObj.width() && $(this).offset().top > dropObj.offset().top && $(this).offset().top < dropObj.offset().top + dropObj.height()) {
+                    $(this).text("yes! I'm in blue");
+                } else {
+                    $(this).text("drag me in to blue");
+                }
+            });
+        });
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: #999;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+        }
+        div.div1 {
+            background: #f00;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 9999;
+            line-height: 50px;
+        }
+        div.div2 {
+            background: blue;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        drag me in to blue
+    </div>
+    <div class="div2">
+    </div>
+</body>
+
+</html>

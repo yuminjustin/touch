@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <title>touch</title>
+    <script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+    <script src="touch.1.1.min.js"></script>
+    <script>
+        /****************************/
+        $(document).ready(function () {
+            var H = 0;
+            var G = 0;
+            var W = $(window).width();
+            var po = "none";
+            var n = $(".slider ul li").length;
+            $(".slider ul li:eq(0) img").load(function () {
+                H = $(this).height();
+                $(".slider").css("height", H);
+                $(".slider ul li").css("width", W);
+                $(".slider ul").css("width", W * n);
+            });
+            var l = parseInt($(".slider ul").css("left"));
+            $(".slider").drag(function (event, p) {
+                $("ul", this).css({
+                    "left": l + (p.x - p.xs)
+                });
+                if (Math.abs(p.x - p.xs) >= W * 0.5) {
+                    if ((p.x - p.xs) < 0) {
+                        po = "left";
+                    } else {
+                        po = "right";
+                    }
+                } else {
+                    po = "none";
+                }
+            });
+            $(".slider").on("touchend", function (event) {
+                event.preventDefault();
+                l = parseInt($(".slider ul").css("left"));
+                if (po == "right" && G > 0) {
+                    G--;
+                }
+                if (po == "left" && G < (n - 1)) {
+                    G++;
+                }
+                $(".slider ul").animate({
+                    "left": -W * G
+                });
+                l = -W * G;
+                $(".control a").removeClass("on");
+                $(".control a:eq(" + G + ")").addClass("on");
+            });
+        });
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .slider {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+        .slider ul {
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            list-style: none;
+        }
+        .slider ul li {
+            width: 100%;
+            float: left;
+        }
+        .slider ul li img {
+            width: 100%;
+        }
+        .control {
+            position: absolute;
+            text-align: center;
+            bottom: 10%;
+            width: 100%;
+        }
+        .control a {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, .5);
+        }
+        .control a.on,
+        .control a:hover {
+            background: rgba(255, 0, 0, 1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+        <ul>
+            <li>
+                <img src="http://img5.duitang.com/uploads/item/201112/19/20111219083341_2P55n.thumb.600_0.jpg" />
+            </li>
+            <li>
+                <img src="http://img4.duitang.com/uploads/item/201112/19/20111219082225_cdBw8.jpg" />
+            </li>
+            <li>
+                <img src="http://img5.duitang.com/uploads/item/201112/19/20111219083010_E8PGE.thumb.700_0.jpg" />
+            </li>
+            <li>
+                <img src="http://www.yxbns.com/bizhi/image/20121474.jpg" />
+            </li>
+        </ul>
+        <div class="control">
+            <a class="on">&nbsp;</a>
+            <a>&nbsp;</a>
+            <a>&nbsp;</a>
+            <a>&nbsp;</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

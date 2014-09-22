@@ -44,7 +44,9 @@
             var temp = self.framework(event);
             self.tm = {
                 x: temp.pageX,
-                y: temp.pageY
+                y: temp.pageY,
+                xs: self.ts.x,
+                ys: self.ts.y
             };
             if (self.e == "drag") {
                 self.target.trigger(self.e, self.tm);
@@ -90,9 +92,9 @@
         } else if (y < options.y && x > options.x) {
             if (t < 250) {
                 if (this.te.x > 0) {
-                    s = "swipeLeft"
-                } else {
                     s = "swipeRight"
+                } else {
+                    s = "swipeLeft"
                 }
             } else {
                 s = "swipe"
