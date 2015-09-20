@@ -58,7 +58,7 @@ Drag events:
 此插件支持 JQuery或者Zepto
 提供一般性的触摸事件，（如上）
 
-##详细：http://dwz.cn/IlXro
+##详细：http://dwz.cn/1JZ3VX
 
 
      
