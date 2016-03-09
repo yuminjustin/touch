@@ -1,21 +1,17 @@
 touch
 =====
 
-touch plugin for JQuery or Zepto
+基于 JQuery 或者 Zepto
 
-New version and demos
+内含demo 可以查看效果
 
-version:1.1
+版本:1.1     修复了拖拽事件。
 
-Fix drag events.
+提供了常用的几个事件: tap,longTap, swipeUp,swipeDown,swipeLeft,swipeRight,swipe,drag
 
-This plugin base on JQuery or Zepto.
+你可以这样来使用:
 
-It offer generality touch events: tap,longTap, swipeUp,swipeDown,swipeLeft,swipeRight,swipe,drag
-
-You can use it like these:
-
-      $(document).ready(function () { /*must*/
+      $(document).ready(function () { /*必须*/
             $(this).tap(function (event) {
                 $("#xx").text("tap");
             });
@@ -42,7 +38,7 @@ You can use it like these:
             });
         });
 
-Drag events:
+拖拽事件:
 
        $(".slider").drag(function (event, p) {
                 console.log(p.x,p.y,p.xs,p.ys);
@@ -58,7 +54,7 @@ Drag events:
 此插件支持 JQuery或者Zepto
 提供一般性的触摸事件，（如上）
 
-##详细：http://dwz.cn/1JZ3VX
+##详细：https://yuminjustin.github.io/?/arc/arcid:01/channel:arc3VX
 
 
      
