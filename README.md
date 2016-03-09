@@ -54,7 +54,7 @@ touch
 此插件支持 JQuery或者Zepto
 提供一般性的触摸事件，（如上）
 
-##详细：https://yuminjustin.github.io/?/arc/arcid:01/channel:arc3VX
+##详细：https://yuminjustin.github.io/?/arc/arcid:01/channel:arc
 
 
      
