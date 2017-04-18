@@ -10,8 +10,8 @@ touch
 提供了常用的几个事件: tap,longTap, swipeUp,swipeDown,swipeLeft,swipeRight,swipe,drag
 
 你可以这样来使用:
-
-      $(document).ready(function () { /*写在头部时必须*/
+       
+       $(document).ready(function () {  /*写在头部时必须*/
             $(this).tap(function (event) {
                 $("#xx").text("tap");
             });
@@ -41,11 +41,11 @@ touch
 拖拽事件:
 
        $(".slider").drag(function (event, p) {
-                console.log(p.x,p.y,p.xs,p.ys);
-                /*
-                  p.x,p.y: touch position now
-                  p.xs,p.ys: touch position when you start to touch
-                */
+          console.log(p.x,p.y,p.xs,p.ys);
+          /*
+            p.x,p.y: touch position now
+            p.xs,p.ys: touch position when you start to touch
+         */
       });
       
      
@@ -54,7 +54,8 @@ touch
 此插件支持 JQuery或者Zepto
 提供一般性的触摸事件，（如上）
 
-##详细：https://yuminjustin.github.io/?/arc/arcid:01/channel:arc
+##详细：https://yuminjustin.github.io/arc/tid:15
 
 
      
+
