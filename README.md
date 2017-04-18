@@ -11,7 +11,7 @@ touch
 
 你可以这样来使用:
 
-      $(document).ready(function () { /*必须*/
+      $(document).ready(function () { /*写在头部时必须*/
             $(this).tap(function (event) {
                 $("#xx").text("tap");
             });
